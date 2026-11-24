@@ -20,4 +20,8 @@ public interface EntraineurRepository extends JpaRepository<Entraineur, Long> {
     // BF-08 : recherche par nom ou prénom, avec pagination
     Page<Entraineur> findByNomContainingIgnoreCaseOrPrenomContainingIgnoreCase(
             String nom, String prenom, Pageable pageable);
+
+    boolean existsByEmailIgnoreCase(String email);
+
+    boolean existsByEmailIgnoreCaseAndIdNot(String email, Long idExclu);
 }

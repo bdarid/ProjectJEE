@@ -27,4 +27,8 @@ public interface MatchRepository extends JpaRepository<Match, Long> {
 
     // RG-14 : une équipe qui a encore des matchs ne peut pas être supprimée
     long countByEquipeId(Long equipeId);
+
+    List<Match> findByEquipeIdAndStatutAndDateHeureAfterOrderByDateHeureAsc(Long id, StatutMatch statutMatch, LocalDateTime maintenant);
+
+    List<Match> findAllByOrderByDateHeureDesc();
 }

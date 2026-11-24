@@ -24,4 +24,8 @@ public interface EntrainementRepository extends JpaRepository<Entrainement, Long
 
     // RG-14 : une équipe qui a encore des entraînements ne peut pas être supprimée
     long countByEquipeId(Long equipeId);
+
+    List<Entrainement> findByEquipeIdAndDateHeureAfterOrderByDateHeureAsc(Long id, LocalDateTime maintenant);
+
+    List<Entrainement> findAllByOrderByDateHeureDesc();
 }

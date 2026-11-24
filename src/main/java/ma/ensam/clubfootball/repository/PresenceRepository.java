@@ -26,4 +26,8 @@ public interface PresenceRepository extends JpaRepository<Presence, Long> {
     long countByJoueurIdAndStatutIn(Long joueurId, Collection<StatutPresence> statuts);
 
     long countByEntrainementIdAndStatutIn(Long entrainementId, Collection<StatutPresence> statuts);
+
+    Optional<Presence> findByEntrainementIdAndJoueurId(Long entrainementId, Long joueurId);
+
+    List<Presence> findByJoueurId(Long joueurId);
 }

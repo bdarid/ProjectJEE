@@ -32,4 +32,6 @@ public interface UtilisateurRepository extends JpaRepository<Utilisateur, Long> 
     @Modifying(clearAutomatically = true)
     @Query("UPDATE Utilisateur u SET u.entraineur = null WHERE u.entraineur.id = :entraineurId")
     int detacherEntraineur(@Param("entraineurId") Long entraineurId);
+
+    boolean existsByUsernameIgnoreCase(String identifiant);
 }

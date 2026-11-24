@@ -36,4 +36,6 @@ public interface ParticipationMatchRepository extends JpaRepository<Participatio
     // RG-09 : les buts des participants ne doivent pas dépasser ceux de l'équipe
     @Query("SELECT COALESCE(SUM(p.buts), 0L) FROM ParticipationMatch p WHERE p.match.id = :matchId")
     long totalButsDuMatch(@Param("matchId") Long matchId);
+
+    void deleteByMatchId(Long matchId);
 }

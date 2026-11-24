@@ -38,4 +38,7 @@ public interface JoueurRepository extends JpaRepository<Joueur, Long> {
                             @Param("poste") PosteJoueur poste,
                             @Param("equipeId") Long equipeId,
                             Pageable pageable);
+
+    List<Joueur> findByEquipeIdOrderByNumeroMaillotAsc(Long id);
+
 }

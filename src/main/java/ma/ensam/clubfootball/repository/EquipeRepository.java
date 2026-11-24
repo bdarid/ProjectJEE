@@ -35,4 +35,8 @@ public interface EquipeRepository extends JpaRepository<Equipe, Long> {
     @Modifying(clearAutomatically = true)
     @Query("UPDATE Equipe e SET e.entraineur = null WHERE e.entraineur.id = :entraineurId")
     int retirerEntraineur(@Param("entraineurId") Long entraineurId);
+
+    boolean existsByNomIgnoreCaseAndSaison(String nom, String saison);
+
+    boolean existsByNomIgnoreCaseAndSaisonAndIdNot(String nom, String saison, Long id);
 }
