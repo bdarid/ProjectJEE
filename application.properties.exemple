@@ -1,0 +1,9 @@
+# À recopier dans src/main/resources/application.properties (adapter user / mot de passe)
+spring.datasource.url=jdbc:mysql://localhost:3306/club_football?createDatabaseIfNotExist=true&serverTimezone=UTC
+spring.datasource.username=root
+spring.datasource.password=
+
+# Hibernate crée / met à jour les tables à partir des entités
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
